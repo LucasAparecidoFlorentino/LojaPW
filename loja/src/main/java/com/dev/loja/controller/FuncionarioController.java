@@ -1,11 +1,14 @@
 package com.dev.loja.controller;
 
+import java.util.Optional;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -30,6 +33,12 @@ public class FuncionarioController {
 		ModelAndView mv = new ModelAndView("administrativo/funcionarios/lista");
 		mv.addObject("listaFuncionarios", funcionarioRepository.findAll());
 		return mv;
+	}
+	
+	@GetMapping("/administrativo/funcionarios/editar/{id}")
+	public ModelAndView editar(@PathVariable("id") Long id) {
+		Optional<Funcionario> funcionario = funcionarioRepository.findById(id);
+		return cadastrar(funcionario.get());
 	}
 	
 	@PostMapping("/administrativo/funcionarios/salvar")
