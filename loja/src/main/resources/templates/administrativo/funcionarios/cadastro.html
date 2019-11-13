@@ -27,8 +27,7 @@
 					<button type="button" class="btn btn-dark navbar-toggle pull-left">
 						<i class="oi oi-menu"></i>
 					</button>
-					<a class="navbar-brand navbar-toggle pull-left" href="#">Loja Virtual
-						Spring Boot</a>
+					<a class="navbar-brand navbar-toggle pull-left" href="#">Schimankas Bar</a>
 				</div>
 			</div>
 		</nav>
@@ -76,7 +75,7 @@
 			</div>
 
 			<div class="container" id="cadastro">
-				<form action="/funcionarios/salvar" method="POST">
+				<form action="/administrativo/funcionarios/salvar" method="POST">
 					<div class="form-row">
 						<div class="form-group col-md-6">
 							<label for="nome">Nome do Funcionário</label> <input type="text"
@@ -92,7 +91,7 @@
 						</div>
 					</div>
 					<div class="form-row">
-						<div class="form-group col-md-6">
+						<!-- <div class="form-group col-md-6">
 							<label for="dataEntrada">Data de Entrada</label> <input
 								type="date" class="form-control" id="dataEntrada"
 								name="dataEntrada" value="" />
@@ -102,7 +101,7 @@
 							<label for="dataSaida">Data de Saída</label> <input type="date"
 								class="form-control" id="dataSaida" name="dataSaida" value="" />
 							<div class="invalid-feedback"></div>
-						</div>
+						</div> -->
 					</div>
 					<div class="form-row">
 						<div class="form-group col-md-6">
@@ -120,13 +119,13 @@
 					<div class="form-row">
 						<div class="form-group col-md-6">
 							<label for="cidade">Cidade</label> <input type="text"
-								class="form-control" id="cidade" name="endereco.cidade" value="" />
+								class="form-control" id="cidade" name="cidade" value="" />
 							<div class="invalid-feedback"></div>
 						</div>
 						<div class="form-group col-md-6">
 							<label for="logradouro">Logradouro</label> <input type="text"
 								class="form-control" id="logradouro"
-								placeholder="logradouro sem número" name="endereco.logradouro"
+								placeholder="logradouro sem número" name="logradouro"
 								value="" />
 							<div class="invalid-feedback"></div>
 						</div>
@@ -134,26 +133,26 @@
 					<div class="form-row">
 						<div class="form-group col-md-6">
 							<label for="numero">Número</label> <input type="text"
-								class="form-control" id="numero" name="endereco.numero" value="" />
+								class="form-control" id="numero" name="numero" value="" />
 							<div class="invalid-feedback"></div>
 						</div>
 						<div class="form-group col-md-6">
 							<label for="complemento">Complemento</label> <input type="text"
 								class="form-control" id="complemento"
 								placeholder="fundos, casa, AP. 102, .."
-								name="endereco.complemento" value="" />
+								name="complemento" value="" />
 							<div class="invalid-feedback"></div>
 						</div>
 					</div>
 					<div class="form-row">
 						<div class="form-group col-md-6">
 							<label for="bairro">Bairro</label> <input type="text"
-								class="form-control" id="bairro" name="endereco.bairro" value="" />
+								class="form-control" id="bairro" name="bairro" value="" />
 							<div class="invalid-feedback"></div>
 						</div>
 						<div class="form-group col-md-4">
 							<label for="uf">UF</label> <select id="uf" class="form-control"
-								name="endereco.uf">
+								name="uf">
 								<option value="">Selecione...</option>
 								<option value="AC">AC</option>
 								<option value="AL">AL</option>
@@ -187,7 +186,7 @@
 						<div class="form-group col-md-2">
 							<label for="cep">Cep</label> <input type="text"
 								class="form-control" id="cep" data-mask="00000-000"
-								name="endereco.cep" value="" />
+								name="cep" value="" />
 							<div class="invalid-feedback"></div>
 						</div>
 					</div>
