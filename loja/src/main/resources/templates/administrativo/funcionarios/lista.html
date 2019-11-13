@@ -166,12 +166,12 @@
 									th:href="@{/administrativo/funcionarios/editar/{id}(id=${funcionario.id})}" role="button"> <span
 										class="oi oi-brush" title="Editar" aria-hidden="true"></span>
 								</a>
-									<button id="btn_funcionarios/excluir/1" type="button"
-										class="btn btn-danger btn-sm" data-toggle="modal"
-										data-target="#myModal">
-										<span class="oi oi-circle-x" title="Excluir"
-											aria-hidden="true"></span>
-									</button></td>
+								
+								<a class="btn btn-info btn-sm"
+									th:href="@{/administrativo/funcionarios/remover/{id}(id=${funcionario.id})}" role="button"> <span
+										class="oi oi-circle-x" title="Remover" aria-hidden="true"></span>
+								</a>
+									</td>
 							</tr>
 						</tbody>
 					</table>

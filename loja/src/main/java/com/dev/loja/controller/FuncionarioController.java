@@ -41,6 +41,13 @@ public class FuncionarioController {
 		return cadastrar(funcionario.get());
 	}
 	
+	@GetMapping("/administrativo/funcionarios/remover/{id}")
+	public ModelAndView remover(@PathVariable("id") Long id) {
+		Optional<Funcionario> funcionario = funcionarioRepository.findById(id);
+		funcionarioRepository.delete(funcionario.get());
+		return listar();
+	}
+	
 	@PostMapping("/administrativo/funcionarios/salvar")
 	public ModelAndView salvar(@Valid Funcionario funcionario, BindingResult result) {
 		
