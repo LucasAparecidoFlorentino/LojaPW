@@ -152,6 +152,7 @@
 								<th>Nome</th>
 								<th>Cargo</th>
 								<th>Salario Bruto</th>
+								<th>Cidade</th>
 								<th>Ação</th>
 							</tr>
 						</thead>
@@ -161,6 +162,7 @@
 								<td th:text="${funcionario.nome}"></td>
 								<td th:text="${funcionario.cargo}"></td>
 								<td th:text="${funcionario.salarioBruto}"></td>
+								<td th:text="${funcionario.cidade}"></td>
 								
 								<td colspan="2"><a class="btn btn-info btn-sm"
 									th:href="@{/administrativo/funcionarios/editar/{id}(id=${funcionario.id})}" role="button"> <span

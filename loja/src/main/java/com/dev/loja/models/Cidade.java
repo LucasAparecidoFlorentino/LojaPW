@@ -57,4 +57,11 @@ public class Cidade implements Serializable {
 		return serialVersionUID;
 	}
 
+	@Override
+	public String toString() {
+		return nome + "-" + estado.getSigla();
+	}
+	
+	
+
 }
