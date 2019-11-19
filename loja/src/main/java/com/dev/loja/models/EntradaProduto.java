@@ -30,8 +30,17 @@ public class EntradaProduto implements Serializable {
 	private Date dataEntrada = new Date();
 	private String observacao;
 	private String fornecedor;
+	private Double valorProduto;
 	
 	
+	
+	
+	public Double getValorProduto() {
+		return valorProduto;
+	}
+	public void setValorProduto(Double valorProduto) {
+		this.valorProduto = valorProduto;
+	}
 	public String getFornecedor() {
 		return fornecedor;
 	}
