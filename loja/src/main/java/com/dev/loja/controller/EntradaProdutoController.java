@@ -71,7 +71,7 @@ public class EntradaProdutoController {
 			this.listaEntrada.add(entradaItens);
 		}
 		
-		System.out.println(listaEntrada.size());
+		System.out.println(this.listaEntrada.size());
 		
 		return cadastrar(entrada, new EntradaItens());
 	}
