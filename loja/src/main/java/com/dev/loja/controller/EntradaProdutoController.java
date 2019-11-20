@@ -82,8 +82,8 @@ public class EntradaProdutoController {
 				produto.setValorVenda(it.getValorVenda());
 				produtoRepository.saveAndFlush(produto);
 				this.listaEntrada = new ArrayList<>();
-				return cadastrar(new EntradaProduto(), new EntradaItens());
 			}
+			return cadastrar(new EntradaProduto(), new EntradaItens());
 		}
 		
 		System.out.println(this.listaEntrada.size());
