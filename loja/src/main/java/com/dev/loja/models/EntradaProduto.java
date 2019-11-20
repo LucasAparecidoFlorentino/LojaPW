@@ -31,10 +31,16 @@ public class EntradaProduto implements Serializable {
 	private String observacao;
 	private String fornecedor;
 	private Double valorProduto;
+	private Double valorVenda=0.;
 	
 	
 	
-	
+	public Double getValorVenda() {
+		return valorVenda;
+	}
+	public void setValorVenda(Double valorVenda) {
+		this.valorVenda = valorVenda;
+	}
 	public Double getValorProduto() {
 		return valorProduto;
 	}

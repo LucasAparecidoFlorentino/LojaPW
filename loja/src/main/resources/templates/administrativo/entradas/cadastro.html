@@ -52,8 +52,8 @@
 					</div>
 
 					<div class="form-group col-md-6">
-						<label for="observacao">ObservaÃ§Ã£o</label> <input type="text"
-							class="form-control" id="observacao" placeholder="ObservaÃ§Ã£o"
+						<label for="observacao">Observação</label> <input type="text"
+							class="form-control" id="observacao" placeholder="Observação"
 							autofocus="autofocus" th:field="*{observacao}" value="" />
 						<div class="invalid-feedback"></div>
 					</div>
@@ -71,7 +71,7 @@
 				<hr />
 				<div class="form-row" th:object="${entradaItens}">
 
-					<div class="form-group col-md-6">
+					<div class="form-group col-md-4">
 						<label>Produto</label> <select th:field="*{produto}"
 							class="form-control">
 							<option th:each="prod: ${listaProdutos}" th:value="${prod.id}"
@@ -80,7 +80,7 @@
 						<div class="invalid-feedback"></div>
 					</div>
 
-					<div class="form-group col-md-3">
+					<div class="form-group col-md-2">
 						<label for="quantidade">Quantidade</label> <input type="number"
 							class="form-control" id="quantidade" placeholder="Quantidade"
 							autofocus="autofocus" th:field="*{quantidade}" value="" />
@@ -88,10 +88,17 @@
 					</div>
 				</div>
 
-				<div class="form-group col-md-3">
-					<label for="valor">Valor Produto</label> <input type="number"
-						class="form-control" id="valor" placeholder="Valor Produto"
+				<div class="form-group col-md-2">
+					<label for="valor">Valor Custo</label> <input type="number"
+						class="form-control" id="valor" placeholder="Valor Custo"
 						autofocus="autofocus" th:field="*{valorProduto}" value="" />
+					<div class="invalid-feedback"></div>
+				</div>
+
+				<div class="form-group col-md-2">
+					<label for="valorVenda">Valor Venda</label> <input type="number"
+						class="form-control" id="valorVenda" placeholder="Valor de Venda"
+						autofocus="autofocus" th:field="*{valorVenda}" value="" />
 					<div class="invalid-feedback"></div>
 				</div>
 		</div>
@@ -102,12 +109,36 @@
 				class="btn btn-primary btn-sm">Adicionar Item</button>
 		</div>
 
-		</div>
-					<input type="hidden" id="id" th:value="*{id}" value="" />
-					<button type="submit" class="btn btn-primary btn-sm">Salvar</button>
-				</form>
+		<div class="form-row">
+			<div class="form-group col-md-12"></div>
+			<div class="table-responsive">
+				<table class="table table-striped table-hover table-sm">
+					<thead>
+						<tr>
+							<th>Descrição</th>
+							<th>Quantidade</th>
+							<th>Valor Custo</th>
+							<th>Valor Venda</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="itens : ${listaEntradaItens}">
+							<td th:text="${itens.produto.descricao}"></td>
+							<td th:text="${itens.quantidade}"></td>
+							<td th:text="${itens.valorProduto}"></td>
+							<td th:text="${itens.valorVenda}"></td>
+
+						</tr>
+					</tbody>
+				</table>
 			</div>
-		</section>
+		</div>
+		<input type="hidden" id="id" th:value="*{id}" value="" />
+		<button type="submit" class="btn btn-primary btn-sm" name="acao"
+			th:value="salvar">Salvar</button>
+		</form>
+		</div>
+	</section>
 
 	</div>
 

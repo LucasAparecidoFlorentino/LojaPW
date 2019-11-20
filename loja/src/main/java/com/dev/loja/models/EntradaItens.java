@@ -29,10 +29,17 @@ public class EntradaItens implements Serializable {
 	private EntradaProduto entrada;
 	@ManyToOne
 	private Produto produto;
-	private Double quantidade;
-	private Double valorProduto;
+	private Double quantidade=0.;
+	private Double valorProduto=0.;
+	private Double valorVenda=0.;
 	
 	
+	public Double getValorVenda() {
+		return valorVenda;
+	}
+	public void setValorVenda(Double valorVenda) {
+		this.valorVenda = valorVenda;
+	}
 	public Long getId() {
 		return id;
 	}
