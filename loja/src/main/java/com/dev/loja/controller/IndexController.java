@@ -15,14 +15,19 @@ import org.springframework.web.servlet.ModelAndView;
 import com.dev.loja.models.Cidade;
 import com.dev.loja.repository.CidadeRepository;
 import com.dev.loja.repository.EstadoRepository;
+import com.dev.loja.repository.ProdutoRepository;
 
 @Controller
 public class IndexController {
+	
+	@Autowired
+	private ProdutoRepository produtoRepository;
 	
 	
 	@GetMapping("/")
 	public ModelAndView index() {
 		ModelAndView mv = new ModelAndView("/index");
+		mv.addObject("listaProdutos", produtoRepository.findAll());
 		return mv;
 	}
 
