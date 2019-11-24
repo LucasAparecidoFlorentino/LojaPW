@@ -52,7 +52,7 @@
 								<td th:text="${permissao.id}"></td>
 								<td th:text="${permissao.funcionario.nome}"></td>
 								<td th:text="${permissao.papel.nome}"></td>
-								<td th:text="${permissao.dataCadastro}"></td>
+								<td th:text="${#dates.format(permissao.dataCadastro, 'dd/MM/yyyy')}"></td>
 								
 								<td colspan="2"><a class="btn btn-info btn-sm"
 									th:href="@{/administrativo/permissoes/editar/{id}(id=${permissao.id})}" role="button"> <span
