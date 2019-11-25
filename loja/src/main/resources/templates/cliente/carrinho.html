@@ -24,7 +24,8 @@
                     <th scope="col">Produto</th>
                     <th scope="col">Estoque</th>
                     <th scope="col" class="text-center">Quantidade</th>
-                    <th scope="col" class="text-right">Preço</th>
+                    <th scope="col" class="text-right">Valor Unitário</th>
+                    <th scope="col" class="text-right">Valor Total</th>
                     <th> </th>
                 </tr>
             </thead>
@@ -38,6 +39,7 @@
                     &nbsp;
                     <a class="btn btn-sm btn-success" th:href="@{/alterarQuantidade/{id}/{acao}(id=${item.produto.id},acao=${0})}" role="button"><i class="fa fa-minus"></i></a>
                     </td>
+                    <td class="text-right" th:text="${item.valorUnitario}"></td>
                     <td class="text-right" th:text="${item.valorTotal}"></td>
                     <td class="text-right">
                     <a class="btn btn-sm btn-danger" th:href="@{/removerProduto/{id}(id=${item.produto.id})}" role="button"><i class="fa fa-trash"></i></a>
@@ -47,8 +49,9 @@
                     <td></td>
                     <td></td>
                     <td></td>
+                    <td></td>
                     <td>Sub-Total</td>
-                    <td class="text-right">255,90 €</td>
+                    <td class="text-right"><span th:text="${compra.valorTotal}"></span></td>
                 </tr>
                 <tr>
                     <td></td>
@@ -56,15 +59,17 @@
                     <td></td>
                     <td></td>
                     <td>Frete</td>
-                    <td class="text-right">6,90 €</td>
+                    <td></td>
+                    <td class="text-right">0,00</td>
                 </tr>
                 <tr>
                     <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
+                    <td></td>
                     <td><strong>Total</strong></td>
-                    <td class="text-right"><strong>346,90 €</strong></td>
+                    <td class="text-right"><span th:text="${compra.valorTotal}"></td>
                 </tr>
             </tbody>
         </table>
