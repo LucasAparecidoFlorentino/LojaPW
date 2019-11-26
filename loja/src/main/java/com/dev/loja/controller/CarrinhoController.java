@@ -1,30 +1,23 @@
 package com.dev.loja.controller;
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.dev.loja.models.Cliente;
 import com.dev.loja.models.Compra;
 import com.dev.loja.models.ItensCompra;
 import com.dev.loja.models.Produto;
+import com.dev.loja.repository.ClienteRepository;
 import com.dev.loja.repository.ProdutoRepository;
 
 @Controller
@@ -32,9 +25,13 @@ public class CarrinhoController {
 	
 	private List<ItensCompra> itensCompra = new ArrayList<ItensCompra>();
 	private Compra compra = new Compra();
+	private Cliente cliente;
 	
 	@Autowired
 	private ProdutoRepository produtoRepository;
+	
+	@Autowired
+	private ClienteRepository clienteRepository;
 	
 	private void calcularTotal() {
 		compra.setValorTotal(0.);
@@ -52,12 +49,22 @@ public class CarrinhoController {
 		return mv;
 	}
 	
+	private void buscarUsuarioLogado() {
+		Authentication autenticado = SecurityContextHolder.getContext().getAuthentication();
+		if(!(autenticado instanceof AnonymousAuthenticationToken)) {
+			String email = autenticado.getName();
+			cliente = clienteRepository.buscarClienteEmail(email).get(0);
+		}
+	}
+	
 	@GetMapping("/finalizar")
 	public ModelAndView finalizarCompra()  {
+		buscarUsuarioLogado();
 		ModelAndView mv = new ModelAndView("cliente/finalizar");
 		calcularTotal();
 		mv.addObject("compra", compra);
 		mv.addObject("listaItens", itensCompra);
+		mv.addObject("cliente", cliente);
 		return mv;
 	}
 	
