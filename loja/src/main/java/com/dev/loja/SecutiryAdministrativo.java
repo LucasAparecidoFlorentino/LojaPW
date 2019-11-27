@@ -50,7 +50,7 @@ public class SecutiryAdministrativo extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests().antMatchers("/login").permitAll().antMatchers("/administrativo/cadastrar/**")
-				.hasAnyAuthority("Contador").antMatchers("/administrativo/**").authenticated().and().formLogin()
+				.hasAnyAuthority("Contador").antMatchers("/").authenticated().and().formLogin()
 				.loginPage("/login").failureUrl("/login").loginProcessingUrl("/admin")
 				.defaultSuccessUrl("/administrativo").usernameParameter("username").passwordParameter("password").and()
 				.logout().logoutRequestMatcher(new AntPathRequestMatcher("/administrativo/logout"))

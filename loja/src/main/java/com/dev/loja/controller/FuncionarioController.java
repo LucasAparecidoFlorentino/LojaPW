@@ -16,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.dev.loja.models.Funcionario;
 import com.dev.loja.repository.CidadeRepository;
 import com.dev.loja.repository.FuncionarioRepository;
+import com.dev.loja.repository.PapelRepository;
 
 @Controller
 public class FuncionarioController {
@@ -26,11 +27,15 @@ public class FuncionarioController {
 	@Autowired
 	private CidadeRepository cidadeRepository;
 	
+	@Autowired
+	private PapelRepository papelRepository;
+	
 	@GetMapping("/administrativo/funcionarios/cadastrar")
 	public ModelAndView cadastrar(Funcionario funcionario) {
 		ModelAndView mv = new ModelAndView("administrativo/funcionarios/cadastro");
 		mv.addObject("funcionario", funcionario);
 		mv.addObject("listaCidades", cidadeRepository.findAll());
+		mv.addObject("listaPapeis", papelRepository.findAll());
 		return mv;
 	}
 	
