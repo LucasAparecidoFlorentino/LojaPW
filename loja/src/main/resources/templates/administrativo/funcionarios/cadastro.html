@@ -7,113 +7,98 @@
 <body>
 
 	<section class="layout-content" layout:fragment="inicio">
-	
-	<h2 align="center">Cadastro de Funcionarios</h2>
 
-<div class="container" id="cadastro">
-<div href="/administrativo/funcionarios/cadastrar">
+		<h2 align="center">Cadastro de Funcionarios</h2>
 
-</div>
-	<form action="/administrativo/funcionarios/salvar"
-		th:object="${funcionario}" method="POST">
-		<div class="form-row">
-			<div class="form-group col-md-6">
-				<label for="nome">Nome do Funcionário</label> <input type="text"
-					class="form-control" id="nome" placeholder="Nome Completo"
-					autofocus="autofocus" th:value="*{nome}" value="" />
-				<div class="invalid-feedback"></div>
-			</div>
-			<div class="form-group col-md-6">
-				<label for="salario">Salário Bruto</label> <input type="text"
-					class="form-control" id="salario" data-mask="#.###,00"
-					data-mask-reverse="true" th:value="*{salarioBruto}" value="" />
-				<div class="invalid-feedback"></div>
-			</div>
-		</div>
-		<div class="form-row">
-			<!-- <div class="form-group col-md-6">
-				<label for="dataEntrada">Data de Entrada</label> <input
-					type="date" class="form-control" id="dataEntrada"
-					name="dataEntrada" value="" />
-				<div class="invalid-feedback"></div>
-			</div>
-			<div class="form-group col-md-6">
-				<label for="dataSaida">Data de Saída</label> <input type="date"
-					class="form-control" id="dataSaida" name="dataSaida" value="" />
-				<div class="invalid-feedback"></div>
-			</div> -->
-		</div>
-		<div class="form-group col-md-6">
-			<label for="papel">Papel</label> <select th:value="*{papel}"
-				class="form-control">
-				<option th:each="papel: ${listaPapeis}" th:value="${papel.id}"
-					th:text="${papel.nome}"></option>
-			</select>
-			<div class="invalid-feedback"></div>
-		</div>
-</div>
-<div class="form-row">
-	<div class="form-group col-md-6">
-		<label for="cidade">Cidade</label> <select th:value="*{cidade}"
-			class="form-control">
-			<option th:each="cid: ${listaCidades}" th:value="${cid.id}"
-				th:text="${cid.nome}"></option>
-		</select>
-		<div class="invalid-feedback"></div>
-	</div>
-	<div class="form-group col-md-6">
-		<label for="logradouro">Logradouro</label> <input type="text"
-			class="form-control" id="logradouro"
-			placeholder="logradouro sem número" th:value="*{logradouro}"
-			value="" />
-		<div class="invalid-feedback"></div>
-	</div>
-</div>
-<div class="form-row">
-	<div class="form-group col-md-6">
-		<label for="numero">Número</label> <input type="text"
-			class="form-control" id="numero" th:value="*{numero}" value="" />
-		<div class="invalid-feedback"></div>
-	</div>
-	<div class="form-group col-md-6">
-		<label for="complemento">Complemento</label> <input type="text"
-			class="form-control" id="complemento"
-			placeholder="fundos, casa, AP. 102, .." th:value="*{complemento}"
-			value="" />
-		<div class="invalid-feedback"></div>
-	</div>
-</div>
-<div class="form-row">
-	<div class="form-group col-md-6">
-		<label for="bairro">Bairro</label> <input type="text"
-			class="form-control" id="bairro" th:value="*{bairro}" value="" />
-		<div class="invalid-feedback"></div>
-	</div>
-	<div class="form-group col-md-6">
-		<label for="cep">Cep</label> <input type="text"
-			class="form-control" id="cep" data-mask="00000-000"
-			th:value="*{cep}" value="" />
-		<div class="invalid-feedback"></div>
-	</div>
+		<div class="container" id="cadastro">
+			<div href="/administrativo/funcionarios/cadastrar"></div>
+			<form action="/administrativo/funcionarios/salvar"
+				th:object="${funcionario}" method="POST">
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label for="nome">Nome do Funcionário</label> <input type="text"
+							class="form-control" id="nome" placeholder="Nome Completo"
+							autofocus="autofocus" th:value="*{nome}" value="" />
+						<div class="invalid-feedback"></div>
+					</div>
+					<div class="form-group col-md-6">
+						<label for="salario">Salário Bruto</label> <input type="text"
+							class="form-control" id="salario" data-mask="#.###,00"
+							data-mask-reverse="true" th:value="*{salarioBruto}" value="" />
+						<div class="invalid-feedback"></div>
+					</div>
+				</div>
+				<div class="form-group col-md-6">
+					<label for="papel">Papel</label> <select th:value="*{papel}"
+						class="form-control">
+						<option th:each="papel: ${listaPapeis}" th:value="${papel.id}"
+							th:text="${papel.nome}"></option>
+					</select>
+					<div class="invalid-feedback"></div>
+				</div>
 
-	<div class="form-row">
-		<div class="form-group col-md-6">
-			<label for="email">Email</label> <input type="text"
-				class="form-control" id="email" th:value="*{email}" value="" />
-			<div class="invalid-feedback"></div>
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label for="cidade">Cidade</label> <select th:value="*{cidade}"
+							class="form-control">
+							<option th:each="cid: ${listaCidades}" th:value="${cid.id}"
+								th:text="${cid.nome}"></option>
+						</select>
+						<div class="invalid-feedback"></div>
+					</div>
+					<div class="form-group col-md-6">
+						<label for="logradouro">Logradouro</label> <input type="text"
+							class="form-control" id="logradouro"
+							placeholder="logradouro sem número" th:value="*{logradouro}"
+							value="" />
+						<div class="invalid-feedback"></div>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label for="numero">Número</label> <input type="text"
+							class="form-control" id="numero" th:value="*{numero}" value="" />
+						<div class="invalid-feedback"></div>
+					</div>
+					<div class="form-group col-md-6">
+						<label for="complemento">Complemento</label> <input type="text"
+							class="form-control" id="complemento"
+							placeholder="fundos, casa, AP. 102, .." th:value="*{complemento}"
+							value="" />
+						<div class="invalid-feedback"></div>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label for="bairro">Bairro</label> <input type="text"
+							class="form-control" id="bairro" th:value="*{bairro}" value="" />
+						<div class="invalid-feedback"></div>
+					</div>
+					<div class="form-group col-md-6">
+						<label for="cep">Cep</label> <input type="text"
+							class="form-control" id="cep" data-mask="00000-000"
+							th:value="*{cep}" value="" />
+						<div class="invalid-feedback"></div>
+					</div>
+
+					<div class="form-row">
+						<div class="form-group col-md-6">
+							<label for="email">Email</label> <input type="text"
+								class="form-control" id="email" th:value="*{email}" value="" />
+							<div class="invalid-feedback"></div>
+						</div>
+						<div class="form-group col-md-6">
+							<label for="senha">Senha</label> <input type="password"
+								class="form-control" id="senha" th:field="*{senha}" />
+							<div class="invalid-feedback"></div>
+						</div>
+					</div>
+					<input type="hidden" id="id" th:value="*{id}" value="" />
+					<button type="submit" class="btn btn-primary btn-sm">Salvar</button>
+			</form>
 		</div>
-		<div class="form-group col-md-6">
-			<label for="senha">Senha</label> <input type="text"
-				class="form-control" id="senha" th:value="*{senha}" value="" />
-			<div class="invalid-feedback"></div>
-		</div>
-	</div>
-	<input type="hidden" id="id" th:value="*{id}" value="" />
-	<button type="submit" class="btn btn-primary btn-sm">Salvar</button>
-</form>
-</div>
-	
-	</section>	
+
+	</section>
 
 </body>
 </html>
