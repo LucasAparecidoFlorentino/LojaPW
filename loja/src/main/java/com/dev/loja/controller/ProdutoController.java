@@ -26,7 +26,7 @@ import com.dev.loja.repository.ProdutoRepository;
 @Controller
 public class ProdutoController {
 
-	private static String caminhoImagens = "D:/MICRO.USER/Videos/LojaPW/";
+	private static String caminhoImagens = "C:\\Users\\Julio\\git\\LojaPW\\imagens";
 
 	@Autowired
 	private ProdutoRepository produtoRepository;

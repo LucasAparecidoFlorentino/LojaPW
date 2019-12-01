@@ -1,172 +1,202 @@
 <!DOCTYPE html>
-<html lang="UTF-8" xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://www.thymeleaf.org"
-	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
-<head>
-<title>Loja Virtual com Spring MVC Spring Boot</title>
-<meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<meta name="description" content="" />
-<meta name="author" content="" />
-<link rel="icon" href="/image/favicon.png" />
+<html lang="pt-br">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Buri HTML5 Bootstrap Template by Colorlib</title>
+    <link rel="icon" href="img/favicon.png" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" th:href="@{/css2/bootstrap.min.css}" />
+    <!-- animate CSS -->
+    <link rel="stylesheet" th:href="@{/css2/animate.css}" />
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" th:href="@{/css2/owl.carousel.min.css}" />
+    <!-- themify CSS -->
+    <link rel="stylesheet" th:href="@{/css2/themify-icons.css}" />
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" th:href="@{/css2/flaticon.css}" />
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" rh:href="@{/css2/magnific-popup.css}" />
+    <!-- swiper CSS -->
+    <link rel="stylesheet" th:href="@{/css2/slick.css}" />
+    <link rel="stylesheet" th:href="@{/css2/gijgo.min.css}" />
+    <link rel="stylesheet" th:href="@{/css2/nice-select.css}" />
+    <link rel="stylesheet" th:href="@{/css2/all.css}" />
+    <!-- style CSS -->
+    <link rel="stylesheet" th:href="@{/css2/style.css}" />
+  </head>
 
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <body>
+    <!--::header part start::-->
+    <header class="main_menu home_menu">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-12">
+            <nav class="navbar navbar-expand-lg navbar-light">
+              <a class="navbar-brand" href="index.html">
+                <span class="text-warning font-weight-bold">SHIMANKAS BAR
+              </span></a>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
 
-<!-- Bootstrap core CSS -->
-<link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-<link href="/webjars/open-iconic/font/css/open-iconic-bootstrap.min.css"
-	rel="stylesheet" />
-
-<!-- Custom styles for this template -->
-<link href="/css/style.css" rel="stylesheet" />
-</head>
-<body>
-	<header>
-		<nav
-			class="navbar navbar-inverse navbar navbar-dark bg-dark fixed-top">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<button type="button" class="btn btn-dark navbar-toggle pull-left">
-						<i class="oi oi-menu"></i>
-					</button>
-					<a class="navbar-brand " href="#">Schimankas Bar</a>
-				</div>
-			</div>
-		</nav>
-	</header>
-
-	<div class="layout-main">
-
-		<aside>
-			<nav class="sidebar sidebar-open" style="height: 2000px">
-				<ul class="nav nav-pills">
-					<li class="nav-item"><a class="nav-link " href="/"> <i
-							class="oi oi-home"></i> <span>Home</span>
-					</a></li>
-				</ul>
-				
-				<ul class="nav nav-pills">
-				<li class="nav-item"><span class="nav-link active">Entrada Produtos</span></li>
-				<li class="nav-item"><a class="nav-link"
-					href="/administrativo/entradas/cadastrar"> <i
-						class="oi oi-plus"></i> <span>Cadastrar </span>
-				</a></li>
-				<li class="nav-item"><a class="nav-link"
-					href="/administrativo/entradas/listar"> <i
-						class="oi oi-spreadsheet"></i> <span>Listar </span>
-				</a></li>
-			</ul>
-
-				<ul class="nav nav-pills">
-					<li class="nav-item"><span class="nav-link active">Funcionários</span></li>
-					<li class="nav-item"><a class="nav-link"
-						href="/administrativo/funcionarios/cadastrar"> <i
-							class="oi oi-plus"></i> <span>Cadastrar </span>
-					</a></li>
-					<li class="nav-item"><a class="nav-link"
-						href="/administrativo/funcionarios/listar"> <i
-							class="oi oi-spreadsheet"></i> <span>Listar </span>
-					</a></li>
-				</ul>
-				
-				<ul class="nav nav-pills">
-				<li class="nav-item"><span class="nav-link active">Papeis</span></li>
-				<li class="nav-item"><a class="nav-link"
-					href="/administrativo/papeis/cadastrar"> <i
-						class="oi oi-plus"></i> <span>Cadastrar </span>
-				</a></li>
-				<li class="nav-item"><a class="nav-link"
-					href="/administrativo/papeis/listar"> <i
-						class="oi oi-spreadsheet"></i> <span>Listar </span>
-				</a></li>
-			</ul>
-				
-			<ul class="nav nav-pills">
-			<li class="nav-item"><span class="nav-link active">Permissões do Funcionário</span></li>
-			<li class="nav-item"><a class="nav-link"
-				href="/administrativo/permissoes/cadastrar"> <i
-					class="oi oi-plus"></i> <span>Cadastrar </span>
-			</a></li>
-			<li class="nav-item"><a class="nav-link"
-				href="/administrativo/permissoes/listar"> <i
-					class="oi oi-spreadsheet"></i> <span>Listar </span>
-			</a></li>
-		</ul>
-		
-				<ul class="nav nav-pills">
-				<li class="nav-item"><span class="nav-link active">Estados</span></li>
-				<li class="nav-item"><a class="nav-link"
-					href="/administrativo/estados/cadastrar"> <i
-						class="oi oi-plus"></i> <span>Cadastrar </span>
-				</a></li>
-				<li class="nav-item"><a class="nav-link"
-					href="/administrativo/estados/listar"> <i
-						class="oi oi-spreadsheet"></i> <span>Listar </span>
-				</a></li>
-			</ul>
-			
-			<ul class="nav nav-pills">
-			<li class="nav-item"><span class="nav-link active">Cidades</span></li>
-			<li class="nav-item"><a class="nav-link"
-				href="/administrativo/cidades/cadastrar"> <i
-					class="oi oi-plus"></i> <span>Cadastrar </span>
-			</a></li>
-			<li class="nav-item"><a class="nav-link"
-				href="/administrativo/cidades/listar"> <i
-					class="oi oi-spreadsheet"></i> <span>Listar </span>
-			</a></li>
-		</ul>
-		
-		<ul class="nav nav-pills">
-		<li class="nav-item"><span class="nav-link active">Produtos</span></li>
-		<li class="nav-item"><a class="nav-link"
-			href="/administrativo/produtos/cadastrar"> <i
-				class="oi oi-plus"></i> <span>Cadastrar </span>
-		</a></li>
-		<li class="nav-item"><a class="nav-link"
-			href="/administrativo/produtos/listar"> <i
-				class="oi oi-spreadsheet"></i> <span>Listar </span>
-		</a></li>
-	</ul>
-	
-		
-			</nav>
-		</aside>
-
-		<section class="layout-content" layout:fragment="corpo">
-			Principal
-		</section>
-
-	</div>
-	<footer class="layout-footer">
-		<div class="container">
-			<span class="footer-copy">&copy; 2018 MBallem. Todos os
-				direitos reservados.</span>
-		</div>
-	</footer>
-
-	<!-- Bootstrap core JavaScript
-    ================================================== -->
-	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="/webjars/jquery/jquery.min.js"></script>
-	<script src="/webjars/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
-	<script type="text/javascript">
+              <div
+                class="collapse navbar-collapse main-menu-item justify-content-end"
+                id="navbarSupportedContent"
+              >
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="about.html">Sobre</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="food_menu.html">Carrinho</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="food_menu.html">Cadastrar</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="food_menu.html">Login</a>
+                  </li>
+                 </ul>
+                  
+              </div>
+              <div class="social_icon d-none d-lg-block">
+                <a href="#" class="single_social_icon"
+                  ><i class="fab fa-facebook-square"></i
+                ></a>
+                <a href="#" class="single_social_icon"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Header part end-->
+    
+    <!-- Fragment Corpo-->
+	<section class="layout-content" layout:fragment="loja">
+   
 	    
-		$(function() {
-			$('[data-toggle="popover"]').popover();
-		});
-		
-		$(document).ready(function(){
-		    $(".navbar-toggle").click(function(){
-		        $(".sidebar").toggleClass("sidebar-open");
-		    })
-		});
+    
+     </section>
+       <!-- Fragment Corpo fim-->
+         
+    <!--::contact part /css2 end::-->
 
-	</script>
-</body>
+    <!-- footer part start-->
+    <footer class="footer-area">
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col-xl-3 col-sm-6 col-md-3 col-lg-3">
+            <div class="single-footer-widget footer_1">
+              <img src="img/logo.png" alt="#" />
+              <p>+880 253 356 263</p>
+              <span>burires@contact.com</span>
+              <div class="social_icon">
+                <a href="#" class="single_social_icon"
+                  ><i class="fab fa-facebook-square"></i
+                ></a>
+                <a href="#" class="single_social_icon"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-sm-6 col-md-2 col-lg-3">
+            <div class="single-footer-widget footer_2">
+              <h4>Quick links</h4>
+              <div class="contact_info">
+                <ul>
+                  <li><a href="#">About</a></li>
+                  <li><a href="#"> Menu</a></li>
+                  <li><a href="#">Reservation</a></li>
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="#"> Breakfast</a></li>
+                  <li><a href="#">Lunch</a></li>
+                  <li><a href="#">Dinner</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-sm-6 col-md-4 col-lg-3">
+            <div class="single-footer-widget footer_3">
+              <h4>Subscribe newsletter</h4>
+              <form action="#">
+                <div class="form-group">
+                  <div class="input-group mb-3">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Email Address"
+                      onfocus="this.placeholder = ''"
+                      onblur="this.placeholder = 'Email Address'"
+                    />
+                    <div class="input-group-append">
+                      <button class="btn" type="button">
+                        <i class="fas fa-paper-plane"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+              <p>
+                Subscribe newsletter to get all updates about discount and
+                offers.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="copyright_part_text">
+          <div class="row">
+            <div class="col-lg-12 text-center">
+              <p class="footer-text m-0">
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- footer part end-->
+
+    <!-- jquery plugins here-->
+    <script th:src="@{/js/jquery-1.12.1.min.js}"></script>
+    <!-- popper js -->
+    <script th:src="@{/js/popper.min.js}"></script>
+    <!-- bootstrap js -->
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+    <!-- easing js -->
+    <script th:src="@{/js/jquery.magnific-popup.js}"></script>
+    <!-- swiper js -->
+    <script th:src="@{/js/swiper.min.js}"></script>
+    <!-- swiper js -->
+    <script th:src="@{/js/masonry.pkgd.js}"></script>
+    <!-- particles js -->
+    <script th:src="@{/js/owl.carousel.min.js}"></script>
+    <!-- swiper js -->
+    <script th:src="@{/js/slick.min.js}"></script>
+    <script th:src="@{/js/gijgo.min.js}"></script>
+    <script th:src="@{/js/jquery.nice-select.min.js}"></script>
+    <!-- custom js -->
+    <script th:src="@{/js/custom.js}"></script>
+  </body>
 </html>

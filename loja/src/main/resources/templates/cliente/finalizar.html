@@ -1,18 +1,22 @@
 <!DOCTYPE HTML>
 <html xmlns:layout="http://www.w3.org/1999/xhtml"
-	layout:decorate="~{cliente/fragments/layout}">
-
+	layout:decorate="~{fragments/layout}">
 <head>
-
-<title>Finalizar compra</title>
-
+<title>Schimankas Bar</title>
 </head>
-
 <body>
 
-	<!-- Page Content -->
-	<div class="container" layout:fragment="corpo">
-		<form action="/finalizar/confirmar" method="post">
+	<section class="layout-content" layout:fragment="loja">
+
+		<section class="">
+		<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			
+			<form action="/finalizar/confirmar" method="post">
 			<div class="row">
 				<div class="col-12">
 					<span th:text="${cliente.nome}"></span>
@@ -24,8 +28,8 @@
 
 				<div class="col-6">
 					<select class="form-control" name="formaPagamento">
-						<option value="Cartão de Credito">Cartão de Credito</option>
-						<option value="Cartão de Debito">Cartão de Débito</option>
+						<option value="Cartão de Credito">Cartao de Credito</option>
+						<option value="Cartão de Debito">Cartao de Debito</option>
 						<option value="Dinheiro">Dinheiro</option>
 					</select>
 				</div>
@@ -39,7 +43,7 @@
 									<th scope="col">Produto</th>
 									<th scope="col">Estoque</th>
 									<th scope="col" class="text-center">Quantidade</th>
-									<th scope="col" class="text-right">Valor Unitário</th>
+									<th scope="col" class="text-right">Valor Unitario</th>
 									<th scope="col" class="text-right">Valor Total</th>
 									<th></th>
 								</tr>
@@ -62,7 +66,7 @@
 									<td></td>
 									<td></td>
 									<td>Sub-Total</td>
-									<td class="text-right"><span
+									<td class="text-right" ><span
 										th:text="${compra.valorTotal}"></span></td>
 								</tr>
 								<tr>
@@ -70,7 +74,7 @@
 									<td></td>
 									<td></td>
 									<td></td>
-									<td>Frete</td>
+									<td class="text-right"><strong>Frete</strong></td>
 									<td></td>
 									<td class="text-right">0,00</td>
 								</tr>
@@ -102,10 +106,10 @@
 			</div>
 			<!-- /.row -->
 		</form>
-	</div>
-	<!-- /.container -->
 
+		</section>
+		<!--::contact part /css2 end::-->
+	</section>
 
 </body>
-
 </html>
