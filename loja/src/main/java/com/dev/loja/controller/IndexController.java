@@ -14,7 +14,7 @@ public class IndexController {
 	private ProdutoRepository produtoRepository;
 	
 	
-	@GetMapping("/")
+	@GetMapping("/site")
 	public ModelAndView index() {
 		ModelAndView mv = new ModelAndView("/index");
 		mv.addObject("listaProdutos", produtoRepository.findAll());

@@ -26,7 +26,7 @@ import com.dev.loja.repository.ProdutoRepository;
 @Controller
 public class ImagemController {
 
-	private static String caminhoImagens = "D:/MICRO.USER/Videos/LojaPW/";
+	private static String caminhoImagens = "D:/MICRO.USER/Videos/LojaPW";
 
 	@GetMapping("/mostrarImagem/{imagem}")
 	@ResponseBody
